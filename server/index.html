@@ -1,7 +1,7 @@
 <h1>
     Web Socket Example
 </h1>
-<p>
+<p onclick="pushButton()">
     open console to see connection.
 </p>
 <script>
@@ -10,7 +10,10 @@
         console.log('websocket is connected ...')
         ws.send('connected')
     }
-    ws.onmessage = function (ev) {
-        console.log(ev);
+    ws.onmessage = function(event){
+       console.log(event)
     }
+
+    var pushButton = function(){ ws.send("Button pushed")};
+
 </script>
